@@ -1,0 +1,7 @@
+#next smallest to left
+s=[]
+for i in range(n):
+    while (len(s) > 0 and s[-1] >= arr[i]):
+            s.pop()
+    print(s[-1], end = ", ")
+    s.append(arr[i])
