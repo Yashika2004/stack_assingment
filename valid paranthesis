@@ -1,0 +1,17 @@
+#valid paranthesis
+
+st=[]
+        if(len(s)%2!=0):
+            return 0
+        for i in range(len(s)):
+            if(s[i]=='(' or s[i]=='{'or s[i]=='['):
+                st.append(s[i])
+            elif(len(st)==0) and(s[i]==')'or s[i]==']' or s[i]=='}'):  
+                return 0
+            elif(s[i]==')'and st[-1]=='(')or(s[i]==']'and st[-1]=='[')or(s[i]=='}'and st[-1]=='{'):
+                    st.pop()
+            else:
+                return 0
+        if(len(st)!=0):
+            return 0
+        return 1
