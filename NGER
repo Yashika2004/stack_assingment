@@ -1,0 +1,18 @@
+#next greater to right
+s=[]
+result = []
+
+  for i in range(len(arr)-1, -1, -1):
+    if len(s):
+      result.append(-1)
+      s.append(arr[i])
+    else:
+      while(not len(s) and arr[i]>s[-1]):
+        s.pop()
+      if len(s):
+        result.append(-1)
+      else:
+        result.append(s[-1])
+        s.append(arr[i])
+  
+  return result
