@@ -1,17 +1,16 @@
 #next greatest to left
 st=[]
 result= []
-peek=-1
-    for i in range(0, len(arr)):
+for i in range(0, len(arr)):
         if len(st):
             result.append(-1)
-            st.push(arr[i])
+            st.append(arr[i])
         else:
-            while(not len(st) and arr[i]>st[peek]):
+            while(not len(st) and arr[i]>st[-1]):
                 st.pop()
             if len(st):
                 result.append(-1)
             else:
-                result.append(st[peek])
-            st.push(arr[i])
+                result.append(st[-1])
+            st.append(arr[i])
  print result
