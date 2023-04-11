@@ -1,0 +1,17 @@
+#next greatest to left
+st=[]
+result= []
+peek=-1
+    for i in range(0, len(arr)):
+        if len(st):
+            result.append(-1)
+            st.push(arr[i])
+        else:
+            while(not len(st) and arr[i]>st[peek]):
+                st.pop()
+            if len(st):
+                result.append(-1)
+            else:
+                result.append(st[peek])
+            st.push(arr[i])
+ print result
